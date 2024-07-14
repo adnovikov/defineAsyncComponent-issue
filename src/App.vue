@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import TheWelcome from "./components/TheWelcome.vue";
 import { ref, defineAsyncComponent, h, onErrorCaptured } from "vue";
-const helloWorldKey = ref(0);
 const LoadingComponent = {
   render() {
     return h("div", "Loading...");
@@ -50,7 +49,7 @@ const showHello = ref(false);
     />
     <button @click="showHello = !showHello">click me</button>
     <div class="wrapper">
-      <HelloWorld :key="helloWorldKey" v-if="showHello" msg="You did it!" />
+      <HelloWorld v-if="showHello" msg="You did it!" />
     </div>
   </header>
 
