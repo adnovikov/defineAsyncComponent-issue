@@ -18,7 +18,7 @@ onErrorCaptured((error) => {
 });
 
 const HelloWorld = defineAsyncComponent({
-  loader: () => import("./components/HelloWorld.vue"),
+  loader: () => import('./components/HelloWorld.vue?r=' + Date.now()),
   loadingComponent: LoadingComponent,
   errorComponent: failComponent,
   async onError(error, retry, fail, attempts) {
